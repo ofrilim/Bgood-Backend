@@ -1,5 +1,5 @@
 const dbService = require('../../services/db.service')
-const ObjectId = require('mongodb').ObjectID
+const ObjectId = require('mongodb').ObjectId
 
 module.exports = {
     query,
@@ -24,10 +24,12 @@ async function query(filterBy = {}) {
 }
 
 async function getById(itemId) {
-    const collection = await dbService.getCollection('item')
+    const collection = await dbService.getCollection('item')    
+    // let _id = new ObjectId('5de3c54177a3f6bbaad4876e')
+    // console.log(typeof itemId);
+    
     try {
-        const item = await collection.findOne({"_id":(itemId)})
-        // const item = await collection.findOne({"_id":ObjectId(itemId)})
+        const item = await collection.findOne({"_id":itemId})
         return item;
     } catch (err) {
         console.log(`ERROR while trying to Find item: ${itemId}`)
@@ -38,7 +40,8 @@ async function getById(itemId) {
 async function remove(itemId) {
     const collection = await dbService.getCollection('item')
     try {
-        await collection.deleteOne({"_id":ObjectId(itemId)})
+        // await collection.deleteOne({"_id":ObjectId(itemId)})
+        await collection.deleteOne({"_id":(itemId)})
     } catch (err) {
         console.log(`ERROR with trying to Remove item ${itemId}`)
         throw err;
@@ -47,10 +50,14 @@ async function remove(itemId) {
 
 async function update(item) {
     const collection = await dbService.getCollection('item')
+    
     try {
-        item._id = ObjectId(item._id)
-        await collection.replaceOne({"_id":ObjectId(item._id)}, {$set: item}) //switch to updateOne ?
-        console.log('*********************************************',item)
+        // item._id = ObjectId(item._id)
+        // await collection.replaceOne({"_id":ObjectId(item._id)}, {$set: item}) //switch to updateOne ?
+        await collection.replaceOne({"_id":(item._id)}, {$set: item}) //switch to updateOne ?
+        console.log('BE service collection:', await collection.find({}).toArray());
+
+        console.log('******************************BE service updated item:', item)
         return item;
     } catch (err) {
         console.log(`ERROR with trying to Update item ${item._id}`)

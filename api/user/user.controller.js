@@ -2,6 +2,8 @@ const userService = require('./user.service')
 
 async function getUser(req, res) {
     const user = await userService.getById(req.params.id)
+    console.log('BE controller user:', user);
+    
     res.send(user)
 }
   
