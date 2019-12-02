@@ -29,8 +29,12 @@ async function query(filterBy = {}) {
 async function getById(userId) {
     const collection = await dbService.getCollection('user')
     try {
-        const user = await collection.findOne({"_id":ObjectId(userId)})
-        delete user.password
+        console.log('backend print ',userId)
+        console.log('backend print ',collection)
+        // const user = await collection.findOne({"_id":ObjectId(userId)})
+        const user = await collection.findOne({ "_id": userId })
+        console.log('backend print ',user)
+        // delete user.password
 
         // user.givenReviews = await reviewService.query({byUserId: ObjectId(user._id) })
         // user.givenReviews = user.givenReviews.map(review => {
@@ -59,7 +63,8 @@ async function getByEmail(email) {
 async function remove(userId) {
     const collection = await dbService.getCollection('user')
     try {
-        await collection.deleteOne({"_id":ObjectId(userId)})
+        // await collection.deleteOne({"_id":ObjectId(userId)})
+        await collection.deleteOne({"_id":userId})
     } catch (err) {
         console.log(`ERROR: cannot remove user ${userId}`)
         throw err;
@@ -68,7 +73,7 @@ async function remove(userId) {
 
 async function update(user) {
     const collection = await dbService.getCollection('user')
-    user._id = ObjectId(user._id);
+    // user._id = ObjectId(user._id);
 
     try {
         await collection.replaceOne({"_id":user._id}, {$set : user})
