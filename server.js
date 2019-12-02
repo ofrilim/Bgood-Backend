@@ -37,9 +37,9 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 // ROUTES
-app.use('/api/auth', authRoutes)
-app.use('/api/item', itemRoutes)
-app.use('/api/user', userRoutes)
+app.use('/auth', authRoutes)
+app.use('/item', itemRoutes)
+app.use('/user', userRoutes)
 // connectSockets(io)
 
 if (process.env.NODE_ENV === 'production') {
