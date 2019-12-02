@@ -1,5 +1,5 @@
 const dbService = require('../../services/db.service')
-const ObjectId = require('mongodb').ObjectID
+const ObjectId = require('mongodb').ObjectId
 
 module.exports = {
     query,
@@ -24,7 +24,7 @@ async function query(filterBy = {}) {
 }
 
 async function getById(itemId) {
-    const collection = await dbService.getCollection('item')
+    const collection = await dbService.getCollection('item')        
     try {
         // const item = await collection.findOne({"_id":ObjectId(itemId)})
         const item = await collection.findOne({ "_id": itemId })
@@ -48,6 +48,7 @@ async function remove(itemId) {
 
 async function update(item) {
     const collection = await dbService.getCollection('item')
+    
     try {
         // item._id = ObjectId(item._id)
         // await collection.replaceOne({"_id":ObjectId(item._id)}, {$set: item})
