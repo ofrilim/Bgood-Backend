@@ -26,7 +26,8 @@ async function query(filterBy = {}) {
 async function getById(itemId) {
     const collection = await dbService.getCollection('item')
     try {
-        const item = await collection.findOne({"_id":ObjectId(itemId)})
+        const item = await collection.findOne({"_id":(itemId)})
+        // const item = await collection.findOne({"_id":ObjectId(itemId)})
         return item;
     } catch (err) {
         console.log(`ERROR while trying to Find item: ${itemId}`)

@@ -59,7 +59,8 @@ async function getByEmail(email) {
 async function remove(userId) {
     const collection = await dbService.getCollection('user')
     try {
-        await collection.deleteOne({"_id":ObjectId(userId)})
+        await collection.deleteOne({"_id":(userId)})
+        // await collection.deleteOne({"_id":ObjectId(userId)})
     } catch (err) {
         console.log(`ERROR: cannot remove user ${userId}`)
         throw err;
