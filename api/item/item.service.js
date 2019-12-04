@@ -11,10 +11,39 @@ module.exports = {
 
 
 async function query(filterBy = {}) {
-    const criteria = _buildCriteria(filterBy)
+    
     const collection = await dbService.getCollection('item')
+    const criteria = _buildCriteria(filterBy)
+    console.log('coolection:', collection);
+    
     try {
-        const items = await collection.find(criteria).toArray();
+        // const items = await collection.find(criteria).toArray();
+
+        const items = await collection.aggregate([
+            {
+                "$project": {
+                  "_id": {
+                    "$toString": "$_id"
+                  }
+                }
+              },
+
+            {  
+
+                $lookup: 
+                {
+                    from: 'user',
+                    localField: 'ownerId',
+                    foreignField: 'ObjectId(_id)',
+                    as: 'byUser'
+                }
+            },
+            {
+                $unwind: '$byUser'
+            },
+        ]).toArray()
+    console.log('inside item service query, items:', items);
+
         return items;
     }
     catch (err) {
@@ -24,11 +53,9 @@ async function query(filterBy = {}) {
 }
 
 async function getById(itemId) {
-    const collection = await dbService.getCollection('item')    
-    // let _id = new ObjectId('5de3c54177a3f6bbaad4876e')
-    // console.log(typeof itemId);
-    
+    const collection = await dbService.getCollection('item')        
     try {
+        itemId = ObjectId(itemId)
         const item = await collection.findOne({"_id":itemId})
         return item;
     } catch (err) {
@@ -40,8 +67,8 @@ async function getById(itemId) {
 async function remove(itemId) {
     const collection = await dbService.getCollection('item')
     try {
-        // await collection.deleteOne({"_id":ObjectId(itemId)})
-        await collection.deleteOne({"_id":(itemId)})
+        itemId = ObjectId(itemId)
+        await collection.deleteOne({"_id":itemId})
     } catch (err) {
         console.log(`ERROR with trying to Remove item ${itemId}`)
         throw err;
@@ -52,12 +79,8 @@ async function update(item) {
     const collection = await dbService.getCollection('item')
     
     try {
-        // item._id = ObjectId(item._id)
-        // await collection.replaceOne({"_id":ObjectId(item._id)}, {$set: item}) //switch to updateOne ?
-        await collection.replaceOne({"_id":(item._id)}, {$set: item}) //switch to updateOne ?
-        console.log('BE service collection:', await collection.find({}).toArray());
-
-        console.log('******************************BE service updated item:', item)
+        item._id = ObjectId(item._id)
+        await collection.replaceOne({"_id":item._id}, {$set: item})
         return item;
     } catch (err) {
         console.log(`ERROR with trying to Update item ${item._id}`)
@@ -86,4 +109,3 @@ function _buildCriteria(filterBy) {
     }
     return criteria;
 }
-

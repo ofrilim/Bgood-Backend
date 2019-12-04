@@ -160,3 +160,5 @@ Wed, 04 Dec 2019 15:33:46 GMT - Debug - auth.service - login with email: gyallop
 Wed, 04 Dec 2019 15:34:34 GMT - Debug - auth.service - login with email: gyallop0@tripadvisor.com
 Wed, 04 Dec 2019 15:35:48 GMT - Debug - auth.service - login with email: gyallop0@tripadvisor.com
 Wed, 04 Dec 2019 15:41:17 GMT - Debug - auth.service - login with email: gyallop0@tripadvisor.com
+
+Wed, 04 Dec 2019 16:08:23 GMT - Info - Server is running on port: 3000
