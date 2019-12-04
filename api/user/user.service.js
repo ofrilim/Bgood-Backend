@@ -18,7 +18,6 @@ async function query(filterBy = {}) {
     try {
         const users = await collection.find(criteria).toArray();
         users.forEach(user => delete user.password);
-
         return users
     } catch (err) {
         console.log('ERROR: cannot find users')
@@ -29,11 +28,43 @@ async function query(filterBy = {}) {
 async function getById(userId) {
     const collection = await dbService.getCollection('user')
     try {
-        // const user = await collection.findOne({"_id":ObjectId(userId)})
-        const user = await collection.findOne({ "_id": userId })
-        // delete user.password
-
+        console.log('service user ID', userId);
         
+        const user = await collection.findOne({"_id":ObjectId(userId)})
+        // var user = await collection.findOne({ "_id": userId })
+        console.log('service user befroe aggregate:', user);
+        user = await collection.aggregate([
+            {   
+                $match: user   
+            }, 
+            {  
+                $lookup: 
+                {
+                    from: 'item',
+                    localField: 'wishListItems',
+                    foreignField: '_id',
+                    as: 'itemsOnWishList'
+                }
+            },
+            {
+                $unwind: '$itemsOnWishList'
+            },
+            {
+                $lookup:
+                {
+                    from: 'item',
+                    localField: '_id',
+                    foreignField: 'ownerId',
+                    as: 'ownItems'
+                }
+            },
+        ]).toArray()
+
+        user = user[0] 
+        delete user.password
+
+        console.log('BE service user:*************************************** after aggregate:', user);
+                
         // user.givenReviews = await reviewService.query({byUserId: ObjectId(user._id) })
         // user.givenReviews = user.givenReviews.map(review => {
         //     delete review.byUser
@@ -49,6 +80,8 @@ async function getByEmail(email) {
     const collection = await dbService.getCollection('user')
     try {
         const user = await collection.findOne({email})
+        console.log('get by email user:', user);
+        
         return user
     } catch (err) {
         console.log(`ERROR: while finding user ${email}`)
@@ -59,8 +92,8 @@ async function getByEmail(email) {
 async function remove(userId) {
     const collection = await dbService.getCollection('user')
     try {
-        // await collection.deleteOne({"_id":ObjectId(userId)})
-        await collection.deleteOne({"_id":userId})
+        await collection.deleteOne({"_id":ObjectId(userId)})
+        // await collection.deleteOne({"_id":userId})
     } catch (err) {
         console.log(`ERROR: cannot remove user ${userId}`)
         throw err;
@@ -72,10 +105,10 @@ async function update(user) {
     // user._id = ObjectId(user._id);
 
     try {
-        await collection.replaceOne({"_id":user._id}, {$set : user})
+        await collection.replaceOne({"_id":ObjectId(user._id)}, {$set : user})
         return user
     } catch (err) {
-        console.log(`ERROR: cannot update user ${user._id}`)
+        console.log(`ERROR: cannot update user ${ObjectId(user._id)}`)
         throw err;
     }
 }
