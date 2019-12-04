@@ -10,6 +10,7 @@ module.exports = {
 
 
 async function getItems(req, res) {
+    console.log('getting items')
     const items = await itemService.query(req.query)   // req.query ?  for filterBy
     res.send(items)
 }
@@ -35,7 +36,10 @@ async function updateItem(req, res) {
 }
 
 async function addItem(req, res) {
+    item.byUserId = req.session.user._id; // added
     const item = await itemService.add(req.body)
+    item.byUser = req.session.user; // added
+    review.aboutUser = {} // added
     res.send(item)
 }
 

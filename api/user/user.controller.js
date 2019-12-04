@@ -1,5 +1,13 @@
 const userService = require('./user.service')
 
+
+module.exports = {
+    getUser,
+    getUsers,
+    deleteUser,
+    updateUser
+}
+
 async function getUser(req, res) {
     const user = await userService.getById(req.params.id)
     console.log('BE controller user:', user);
@@ -21,11 +29,4 @@ async function updateUser(req, res) {
     const user = req.body;
     await userService.update(user)
     res.send(user)
-}
-
-module.exports = {
-    getUser,
-    getUsers,
-    deleteUser,
-    updateUser
 }
