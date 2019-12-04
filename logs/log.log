@@ -1,5 +1,4 @@
 
-<<<<<<< HEAD
 Mon, 02 Dec 2019 15:16:47 GMT - Info - Server is running on port: 3000
 Tue, 03 Dec 2019 12:28:10 GMT - Info - Server is running on port: 3000
 Tue, 03 Dec 2019 13:07:44 GMT - Info - Server is running on port: 3000
@@ -117,7 +116,6 @@ Wed, 04 Dec 2019 11:24:14 GMT - Info - Server is running on port: 3000
 Wed, 04 Dec 2019 15:04:18 GMT - Info - Server is running on port: 3000
 Wed, 04 Dec 2019 16:06:36 GMT - Info - Server is running on port: 3000
 Wed, 04 Dec 2019 16:14:30 GMT - Info - Server is running on port: 3000
-=======
 Sat, 30 Nov 2019 14:02:50 GMT - Info - Server is running on port: 3000
 Sat, 30 Nov 2019 14:02:52 GMT - Info - Server is running on port: 3000
 Sat, 30 Nov 2019 15:07:53 GMT - Info - Server is running on port: 3000
@@ -281,6 +279,5 @@ Wed, 04 Dec 2019 15:35:48 GMT - Debug - auth.service - login with email: gyallop
 Wed, 04 Dec 2019 15:41:17 GMT - Debug - auth.service - login with email: gyallop0@tripadvisor.com
 
 Wed, 04 Dec 2019 16:08:23 GMT - Info - Server is running on port: 3000
->>>>>>> 4ecebd4ac0b2c238b5489ea8708e7d440d380106
 
 Wed, 04 Dec 2019 17:11:52 GMT - Info - Server is running on port: 3000
