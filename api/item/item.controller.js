@@ -31,10 +31,10 @@ async function updateItem(req, res) {
 }
 
 async function addItem(req, res) {
-    item.byUserId = req.session.user._id; // added
     const item = await itemService.add(req.body)
+    item.ownerId = req.session.user._id; // added
     item.byUser = req.session.user; // added
-    review.aboutUser = {} // added
+    // review.aboutUser = {} // added
     res.send(item)
 }
 
