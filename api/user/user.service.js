@@ -27,7 +27,7 @@ async function query(filterBy = {}) {
 
 async function getById(userId) {
     const collection = await dbService.getCollection('user')
-    try {        
+    try {
         var user = await collection.findOne({"_id":ObjectId(userId)})
         user = await collection.aggregate([
             {   
@@ -74,7 +74,6 @@ async function getByEmail(email) {
     try {
         const user = await collection.findOne({email})
         console.log('get by email user:', user);
-        
         return user
     } catch (err) {
         console.log(`ERROR: while finding user ${email}`)
@@ -120,9 +119,6 @@ function _buildCriteria(filterBy) {
     const criteria = {};
     if (filterBy.txt) {
         criteria.username = filterBy.txt
-    }
-    if (filterBy.minBalance) {
-        criteria.balance = {$gte : +filterBy.minBalance}
     }
     return criteria;
 }

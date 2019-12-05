@@ -14,22 +14,13 @@ async function query(filterBy = {}) {
     
     const collection = await dbService.getCollection('item')
     const criteria = _buildCriteria(filterBy)
-    console.log('coolection:', collection);
     
     try {
         var items = await collection.find(criteria).toArray();
+        console.log('inside item service query, items:', items);
 
         items = await collection.aggregate([
-            // {
-            //     "$project": {
-            //       "_id": {
-            //         "$toString": "$_id"
-            //       }
-            //     }
-            //   },
-
             {  
-
                 $lookup: 
                 {
                     from: 'user',
@@ -42,7 +33,7 @@ async function query(filterBy = {}) {
                 $unwind: '$byUser'
             },
         ]).toArray()
-    console.log('inside item service query, items:', items);
+        console.log('inside item service query, items:', items);
 
         return items;
     }
@@ -56,8 +47,29 @@ async function getById(itemId) {
     const collection = await dbService.getCollection('item')        
     try {
         itemId = ObjectId(itemId)
-        const item = await collection.findOne({"_id":itemId})
+        var item = await collection.findOne({"_id":itemId})
+        item = await collection.aggregate([
+            {
+                $match: item,
+            },
+            {  
+                $lookup: 
+                {
+                    from: 'user',
+                    localField: 'ownerId',
+                    foreignField: '_id',
+                    as: 'byUser'
+                }
+            },
+            {
+                $unwind: '$byUser'
+            },
+        ]).toArray()
+        item = item[0]
+        console.log('BE get by id item:', item);
+        
         return item;
+
     } catch (err) {
         console.log(`ERROR while trying to Find item: ${itemId}`)
         throw err;
@@ -80,8 +92,11 @@ async function update(item) {
     
     try {
         item._id = ObjectId(item._id)
-        await collection.replaceOne({"_id":item._id}, {$set: item})
-        return item;
+        item.ownerId = ObjectId(item.ownerId)
+        item.owner._id = ObjectId(item.owner._id)
+        item = await collection.update({"_id" : item._id}, {$unset:{byUser: ""}})
+        const updatedItem = await collection.replaceOne({"_id":item._id}, {$set: item})
+        return updatedItem;
     } catch (err) {
         console.log(`ERROR with trying to Update item ${item._id}`)
         throw err;
