@@ -31,11 +31,18 @@ async function updateItem(req, res) {
 }
 
 async function addItem(req, res) {
-    const item = await itemService.add(req.body)
-    item.ownerId = req.session.user._id; // added
-    item.byUser = req.session.user; // added
+    var item  = req.body
+    console.log('addItem user session:', req.session.user);
+    console.log('addItem user session id:', req.session.user._id);
+    
+    item.ownerId = req.session.user._id; 
+    item.owner._id = req.session.user._id;
+    item.owner.name = req.session.user.fullName;
+    item.owner.imgUrl = req.session.user.imgUrl;
+    const updatedItem = await itemService.add(req.body)
+    console.log('item controller updated item:'. updatedItem);
     // review.aboutUser = {} // added
-    res.send(item)
+    res.send(updatedItem)
 }
 
 
