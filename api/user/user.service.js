@@ -27,12 +27,8 @@ async function query(filterBy = {}) {
 
 async function getById(userId) {
     const collection = await dbService.getCollection('user')
-    try {
-        console.log('service user ID', userId);
-        
-        const user = await collection.findOne({"_id":ObjectId(userId)})
-        // var user = await collection.findOne({ "_id": userId })
-        console.log('service user befroe aggregate:', user);
+    try {        
+        var user = await collection.findOne({"_id":ObjectId(userId)})
         user = await collection.aggregate([
             {   
                 $match: user   
@@ -45,9 +41,6 @@ async function getById(userId) {
                     foreignField: '_id',
                     as: 'itemsOnWishList'
                 }
-            },
-            {
-                $unwind: '$itemsOnWishList'
             },
             {
                 $lookup:

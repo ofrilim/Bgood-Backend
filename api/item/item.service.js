@@ -17,31 +17,22 @@ async function query(filterBy = {}) {
     console.log('coolection:', collection);
     
     try {
-        const items = await collection.find(criteria).toArray();
+        var items = await collection.find(criteria).toArray();
 
-        // const items = await collection.aggregate([
-        //     {
-        //         "$project": {
-        //           "_id": {
-        //             "$toString": "$_id"
-        //           }
-        //         }
-        //       },
+        items = await collection.aggregate([{  
 
-        //     {  
-
-        //         $lookup: 
-        //         {
-        //             from: 'user',
-        //             localField: 'ownerId',
-        //             foreignField: 'ObjectId(_id)',
-        //             as: 'byUser'
-        //         }
-        //     },
-        //     {
-        //         $unwind: '$byUser'
-        //     },
-        // ]).toArray()
+                $lookup: 
+                {
+                    from: 'user',
+                    localField: 'ownerId',
+                    foreignField: '_id',
+                    as: 'byUser'
+                }
+            },
+            {
+                $unwind: '$byUser'
+            },
+        ]).toArray()
     console.log('inside item service query, items:', items);
 
         return items;
