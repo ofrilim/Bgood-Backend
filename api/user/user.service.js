@@ -52,12 +52,8 @@ async function getById(userId) {
                 }
             },
         ]).toArray()
-
         user = user[0] 
         delete user.password
-
-        console.log('BE service user:*************************************** after aggregate:', user);
-                
         // user.givenReviews = await reviewService.query({byUserId: ObjectId(user._id) })
         // user.givenReviews = user.givenReviews.map(review => {
         //     delete review.byUser
@@ -69,11 +65,35 @@ async function getById(userId) {
         throw err;
     }
 }
+
 async function getByEmail(email) {
     const collection = await dbService.getCollection('user')
     try {
-        const user = await collection.findOne({email})
-        console.log('get by email user:', user);
+        var user = await collection.findOne({email})
+        user = await collection.aggregate([
+            {   
+                $match: user   
+            }, 
+            {  
+                $lookup: 
+                {
+                    from: 'item',
+                    localField: 'wishListItems',
+                    foreignField: '_id',
+                    as: 'itemsOnWishList'
+                }
+            },
+            {
+                $lookup:
+                {
+                    from: 'item',
+                    localField: '_id',
+                    foreignField: 'ownerId',
+                    as: 'ownItems'
+                }
+            },
+        ]).toArray()
+        user = user[0] 
         return user
     } catch (err) {
         console.log(`ERROR: while finding user ${email}`)
