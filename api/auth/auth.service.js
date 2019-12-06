@@ -5,7 +5,6 @@ const logger = require('../../services/logger.service')
 const saltRounds = 10
 
 module.exports = {
-    // signup,
     login,
     signup
 }
