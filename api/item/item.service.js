@@ -32,8 +32,6 @@ async function query(filterBy = {}) {
                 $unwind: '$byUser'
             },
         ]).toArray()
-        // console.log('inside item service query, items:', items);
-
         return items;
     }
     catch (err) {
@@ -65,10 +63,7 @@ async function getById(itemId) {
             },
         ]).toArray()
         item = item[0]
-        console.log('BE get by id item:', item);
-        
         return item;
-
     } catch (err) {
         console.log(`ERROR while trying to Find item: ${itemId}`)
         throw err;
@@ -90,15 +85,13 @@ async function update(item) {
     const collection = await dbService.getCollection('item')
     
     try {
-        
         item._id = ObjectId(item._id)
         item.ownerId = ObjectId(item.ownerId)
-        // item.owner._id = ObjectId(item.owner._id)
         const byUser = item.byUser
         delete item.byUser
-        await collection.replaceOne({"_id":item._id}, {$set: item})
-        item.byUser = byUser
-        return item
+        const updatedItem = await collection.replaceOne({"_id":item._id}, {$set: item})
+        updatedItem.byUser = byUser
+        return updatedItem
     } catch (err) {
         console.log(`ERROR with trying to Update item ${item._id}`)
         throw err;

@@ -74,15 +74,15 @@ async function getByEmail(email) {
             {   
                 $match: user   
             },
-            {  
-                $lookup: 
-                {
-                    from: 'item',
-                    localField: 'wishList',
-                    foreignField: '_id',
-                    as: 'itemsOnWishList'
-                }
-            },
+            // {  
+            //     $lookup: 
+            //     {
+            //         from: 'item',
+            //         localField: 'wishList',
+            //         foreignField: '_id',
+            //         as: 'itemsOnWishList'
+            //     }
+            // },
             {
                 $lookup:
                 {
@@ -115,18 +115,23 @@ async function remove(userId) {
 
 async function update(user) {
     const collection = await dbService.getCollection('user')
+    // var userToUpdate = user
     user._id = ObjectId(user._id);
-
+    delete user.itemsOnWishList
+    delete user.ownItems
+    if (user.wishList){
+        user.wishList.map(itemId => {
+            itemId = ObjectId(itemId)
+            console.log('itemId map:', itemId);
+            console.log('type of item id:', typeof(itemId));
+            return itemId            
+        })
+    }
     try {
-        const {itemsOnWishList, ownItems} = user
-        console.log('itemsOnWishList:', itemsOnWishList);
-        console.log('ownItems:', ownItems);
-        delete user.itemsOnWishList
-        delete user.ownItems
-        if (user.wishList.length){
-            user.wishList.map(itemId => itemId = ObjectId(itemId))
-        }
-        console.log(user.wishList);
+        // const {itemsOnWishList, ownItems} = user
+        // console.log('itemsOnWishList:', itemsOnWishList);
+        // console.log('ownItems:', ownItems);
+        // console.log(user.wishList);
         await collection.replaceOne({"_id":user._id}, {$set : user})
 
         // user.itemsOnWishList = itemsOnWishList
@@ -134,15 +139,6 @@ async function update(user) {
         user = await collection.aggregate([
             {   
                 $match: user   
-            },
-            {  
-                $lookup: 
-                {
-                    from: 'item',
-                    localField: 'wishList',
-                    foreignField: '_id',
-                    as: 'itemsOnWishList'
-                }
             },
             {
                 $lookup:
@@ -153,8 +149,18 @@ async function update(user) {
                     as: 'ownItems'
                 }
             },
+            {  
+                $lookup: 
+                {
+                    from: 'item',
+                    localField: 'wishList',
+                    foreignField: '_id',
+                    as: 'itemsOnWishList'
+                }
+            },
         ]).toArray()
         user = user[0] 
+        delete user.password
         console.log('user updated:', user);
         
         return user

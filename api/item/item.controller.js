@@ -33,14 +33,8 @@ async function updateItem(req, res) {
 async function addItem(req, res) {
     var item  = req.body
     const user = req.session.user
-    // console.log('addItem user:', user);
-    // console.log('addItem user session id:', req.session.user._id);
-    // console.log('addItem item:', req.body);
-    
     item.ownerId = user._id; 
-    const updatedItem = await itemService.add(req.body)
-    // console.log('item controller updated item:'. updatedItem);
-    // review.aboutUser = {} // added
+    const updatedItem = await itemService.add(item)
     res.send(updatedItem)
 }
 

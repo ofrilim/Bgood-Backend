@@ -164,3 +164,57 @@ Sat, 07 Dec 2019 09:40:00 GMT - Info - Unauthorized User Tried to Login
 Sat, 07 Dec 2019 09:40:06 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
 Sat, 07 Dec 2019 09:40:33 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
 Sat, 07 Dec 2019 10:43:32 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 10:49:13 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 10:52:13 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 10:52:22 GMT - Info - Unauthorized User Tried to Login
+Sat, 07 Dec 2019 10:52:25 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Sat, 07 Dec 2019 10:54:46 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Sat, 07 Dec 2019 10:56:29 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 10:56:35 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 10:56:48 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 10:56:54 GMT - Info - Unauthorized User Tried to Login
+Sat, 07 Dec 2019 10:56:57 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Sat, 07 Dec 2019 10:58:16 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 10:58:22 GMT - Info - Unauthorized User Tried to Login
+Sat, 07 Dec 2019 10:58:26 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Sat, 07 Dec 2019 13:43:09 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 13:43:12 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 13:44:23 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 13:45:11 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 13:45:13 GMT - Info - Unauthorized User Tried to Login
+Sat, 07 Dec 2019 13:45:18 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Sat, 07 Dec 2019 13:49:08 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 13:49:14 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 13:49:18 GMT - Info - Unauthorized User Tried to Login
+Sat, 07 Dec 2019 13:49:22 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Sat, 07 Dec 2019 13:51:32 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 13:51:34 GMT - Info - Unauthorized User Tried to Login
+Sat, 07 Dec 2019 13:51:39 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Sat, 07 Dec 2019 13:55:07 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 13:55:40 GMT - Info - Unauthorized User Tried to Login
+Sat, 07 Dec 2019 13:55:42 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Sat, 07 Dec 2019 13:58:26 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 13:58:37 GMT - Info - Unauthorized User Tried to Login
+Sat, 07 Dec 2019 13:58:40 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Sat, 07 Dec 2019 13:59:13 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 14:05:28 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 14:05:50 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 14:06:03 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 14:11:53 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 14:12:58 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 14:17:48 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 14:22:16 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 14:24:32 GMT - Info - Unauthorized User Tried to Login
+Sat, 07 Dec 2019 14:28:10 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 14:28:17 GMT - Info - Unauthorized User Tried to Login
+Sat, 07 Dec 2019 14:28:21 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Sat, 07 Dec 2019 14:28:29 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Sat, 07 Dec 2019 14:28:58 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 14:29:05 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Sat, 07 Dec 2019 14:29:33 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 14:32:49 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 14:32:57 GMT - Info - Unauthorized User Tried to Login
+Sat, 07 Dec 2019 14:33:01 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Sat, 07 Dec 2019 14:35:01 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 14:36:44 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 14:36:50 GMT - Info - Server is running on port: 3000
