@@ -10,7 +10,7 @@ module.exports = {
 
 
 async function getItems(req, res) {
-    console.log('getting items')
+    // console.log('getting items')
     const items = await itemService.query(req.query)   // req.query ?  for filterBy
     res.send(items)
 }
@@ -32,15 +32,14 @@ async function updateItem(req, res) {
 
 async function addItem(req, res) {
     var item  = req.body
-    console.log('addItem user session:', req.session.user);
-    console.log('addItem user session id:', req.session.user._id);
+    const user = req.session.user
+    // console.log('addItem user:', user);
+    // console.log('addItem user session id:', req.session.user._id);
+    // console.log('addItem item:', req.body);
     
-    item.ownerId = req.session.user._id; 
-    item.owner._id = req.session.user._id;
-    item.owner.name = req.session.user.fullName;
-    item.owner.imgUrl = req.session.user.imgUrl;
+    item.ownerId = user._id; 
     const updatedItem = await itemService.add(req.body)
-    console.log('item controller updated item:'. updatedItem);
+    // console.log('item controller updated item:'. updatedItem);
     // review.aboutUser = {} // added
     res.send(updatedItem)
 }

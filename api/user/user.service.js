@@ -37,7 +37,7 @@ async function getById(userId) {
                 $lookup: 
                 {
                     from: 'item',
-                    localField: 'wishListItems',
+                    localField: 'wishList',
                     foreignField: '_id',
                     as: 'itemsOnWishList'
                 }
@@ -73,12 +73,12 @@ async function getByEmail(email) {
         user = await collection.aggregate([
             {   
                 $match: user   
-            }, 
+            },
             {  
                 $lookup: 
                 {
                     from: 'item',
-                    localField: 'wishListItems',
+                    localField: 'wishList',
                     foreignField: '_id',
                     as: 'itemsOnWishList'
                 }
@@ -94,6 +94,8 @@ async function getByEmail(email) {
             },
         ]).toArray()
         user = user[0] 
+        console.log('BE user servie user:', user);
+        
         return user
     } catch (err) {
         console.log(`ERROR: while finding user ${email}`)
@@ -116,7 +118,45 @@ async function update(user) {
     user._id = ObjectId(user._id);
 
     try {
+        const {itemsOnWishList, ownItems} = user
+        console.log('itemsOnWishList:', itemsOnWishList);
+        console.log('ownItems:', ownItems);
+        delete user.itemsOnWishList
+        delete user.ownItems
+        if (user.wishList.length){
+            user.wishList.map(itemId => itemId = ObjectId(itemId))
+        }
+        console.log(user.wishList);
         await collection.replaceOne({"_id":user._id}, {$set : user})
+
+        // user.itemsOnWishList = itemsOnWishList
+        // user.ownItems = ownItems
+        user = await collection.aggregate([
+            {   
+                $match: user   
+            },
+            {  
+                $lookup: 
+                {
+                    from: 'item',
+                    localField: 'wishList',
+                    foreignField: '_id',
+                    as: 'itemsOnWishList'
+                }
+            },
+            {
+                $lookup:
+                {
+                    from: 'item',
+                    localField: '_id',
+                    foreignField: 'ownerId',
+                    as: 'ownItems'
+                }
+            },
+        ]).toArray()
+        user = user[0] 
+        console.log('user updated:', user);
+        
         return user
     } catch (err) {
         console.log(`ERROR: cannot update user ${user._id}`)

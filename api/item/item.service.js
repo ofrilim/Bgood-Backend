@@ -17,7 +17,7 @@ async function query(filterBy = {}) {
     
     try {
         var items = await collection.find(criteria).toArray();
-        console.log('inside item service query, items:', items);
+        // console.log('inside item service query, items:', items);
         items = await collection.aggregate([
             {  
                 $lookup: 
@@ -32,7 +32,7 @@ async function query(filterBy = {}) {
                 $unwind: '$byUser'
             },
         ]).toArray()
-        console.log('inside item service query, items:', items);
+        // console.log('inside item service query, items:', items);
 
         return items;
     }
@@ -93,7 +93,7 @@ async function update(item) {
         
         item._id = ObjectId(item._id)
         item.ownerId = ObjectId(item.ownerId)
-        item.owner._id = ObjectId(item.owner._id)
+        // item.owner._id = ObjectId(item.owner._id)
         const byUser = item.byUser
         delete item.byUser
         await collection.replaceOne({"_id":item._id}, {$set: item})
@@ -106,17 +106,16 @@ async function update(item) {
 }
 
 async function add(item) {
+    console.log('first item service add item:', item);
+    
     const collection = await dbService.getCollection('item')
     try {
-        const itemId = item._id
-        item._id = ObjectId(itemId);
+        item._id = ObjectId(item._id);
         item.ownerId = ObjectId(item.ownerId);
-        item.owner._id = ObjectId(item.owner._id);
         await collection.insertOne(item);
-        const addedItem = await getById(itemId)
-        console.log('item service add item:', addedItem);
-        
-        return item;
+        const addedItem = await getById(item._id)
+        // console.log('item service add item:', addedItem);
+        return addedItem;
     } catch (err) {
         console.log('ERROR with trying to Add item')
         throw err;
