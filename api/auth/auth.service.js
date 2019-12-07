@@ -23,13 +23,13 @@ async function login(email, password) {
     return user;
 }
 
-async function signup(email, password, firstName, lastName) {
+async function signup(email, password, firstName, lastName, fullName) {
     logger.debug(`auth.service - signup with email: ${email}, fullname: ${firstName}`+`${lastName}`)
     if (!email || !password || !(firstName || lastName)) return Promise.reject('email, username and password are required!')
 
     // If will be decided to work with bcrypt
     // const hash = await bcrypt.hash(password, saltRounds)
     // return userService.add({ email, password: hash, username })
-    return userService.add({ email, password, firstName , lastName })
+    return userService.add({ email, password, firstName , lastName, fullName })
 }
 

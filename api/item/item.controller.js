@@ -10,7 +10,6 @@ module.exports = {
 
 
 async function getItems(req, res) {
-    // console.log('getting items')
     const items = await itemService.query(req.query)   // req.query ?  for filterBy
     res.send(items)
 }

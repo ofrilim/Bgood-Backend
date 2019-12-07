@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 Fri, 06 Dec 2019 06:48:29 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
 Fri, 06 Dec 2019 06:49:39 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
@@ -218,3 +219,7 @@ Sat, 07 Dec 2019 14:33:01 GMT - Debug - auth.service - login with email: HilaS@g
 Sat, 07 Dec 2019 14:35:01 GMT - Info - Server is running on port: 3000
 Sat, 07 Dec 2019 14:36:44 GMT - Info - Server is running on port: 3000
 Sat, 07 Dec 2019 14:36:50 GMT - Info - Server is running on port: 3000
+=======
+>>>>>>> a1678b99d33481cafb2c966e2c5b0cae92a24299
+
+Sat, 07 Dec 2019 18:41:39 GMT - Info - Server is running on port: 3000

@@ -16,7 +16,7 @@ async function login(req, res) {
         console.log('BE controller login user:', req.session);
         res.json(user)
     } catch (err) {
-        res.status(401).send({ error: err })
+        res.status(403).send({ error: err })
     }
 }
 

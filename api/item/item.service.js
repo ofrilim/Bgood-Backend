@@ -17,7 +17,6 @@ async function query(filterBy = {}) {
     
     try {
         var items = await collection.find(criteria).toArray();
-        // console.log('inside item service query, items:', items);
         items = await collection.aggregate([
             {  
                 $lookup: 
@@ -35,7 +34,7 @@ async function query(filterBy = {}) {
         return items;
     }
     catch (err) {
-        console.log('ERROR: cannot find items')
+        console.log('ERROR AGGREGATE: cannot find items')
         throw err;
     }
 }
@@ -62,7 +61,7 @@ async function getById(itemId) {
                 $unwind: '$byUser'
             },
         ]).toArray()
-        item = item[0]
+        item = item[0]        
         return item;
     } catch (err) {
         console.log(`ERROR while trying to Find item: ${itemId}`)
@@ -83,31 +82,27 @@ async function remove(itemId) {
 
 async function update(item) {
     const collection = await dbService.getCollection('item')
-    
     try {
         item._id = ObjectId(item._id)
         item.ownerId = ObjectId(item.ownerId)
-        const byUser = item.byUser
-        delete item.byUser
-        const updatedItem = await collection.replaceOne({"_id":item._id}, {$set: item})
-        updatedItem.byUser = byUser
-        return updatedItem
+        const byUser = item.byUser;
+        delete item.byUser;
+        const updatedItem = await collection.replaceOne({'_id': item._id}, {$set: item})
+        updatedItem.byUser = byUser;
+        return updatedItem;
     } catch (err) {
         console.log(`ERROR with trying to Update item ${item._id}`)
         throw err;
     }
 }
 
-async function add(item) {
-    console.log('first item service add item:', item);
-    
+async function add(item) {    
     const collection = await dbService.getCollection('item')
     try {
         item._id = ObjectId(item._id);
         item.ownerId = ObjectId(item.ownerId);
         await collection.insertOne(item);
         const addedItem = await getById(item._id)
-        // console.log('item service add item:', addedItem);
         return addedItem;
     } catch (err) {
         console.log('ERROR with trying to Add item')
