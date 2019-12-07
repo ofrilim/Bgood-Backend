@@ -5,7 +5,6 @@ const logger = require('../../services/logger.service')
 const saltRounds = 10
 
 module.exports = {
-    // signup,
     login,
     signup
 }
@@ -13,7 +12,6 @@ module.exports = {
 async function login(email, password) {
     logger.debug(`auth.service - login with email: ${email}`)
     if (!email || !password) return Promise.reject('email and password are required!')
-
     const user = await userService.getByEmail(email)
     if (!user) return Promise.reject('Invalid email or password')
     if (user.password !== password) return Promise.reject('Not Authorized!')

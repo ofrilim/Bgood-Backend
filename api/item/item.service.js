@@ -17,8 +17,6 @@ async function query(filterBy = {}) {
     
     try {
         var items = await collection.find(criteria).toArray();
-        // console.log('inside item service query, items:', items);
-
         items = await collection.aggregate([
             {  
                 $lookup: 
@@ -33,12 +31,10 @@ async function query(filterBy = {}) {
                 $unwind: '$byUser'
             },
         ]).toArray()
-        // console.log('inside item service query, items:', items);
-
         return items;
     }
     catch (err) {
-        console.log('ERROR: cannot find items')
+        console.log('ERROR AGGREGATE: cannot find items')
         throw err;
     }
 }
@@ -65,9 +61,7 @@ async function getById(itemId) {
                 $unwind: '$byUser'
             },
         ]).toArray()
-        item = item[0]
-        // console.log('BE get by id item:', item);
-        
+        item = item[0]        
         return item;
 
     } catch (err) {
@@ -89,12 +83,13 @@ async function remove(itemId) {
 
 async function update(item) {
     const collection = await dbService.getCollection('item')
-    
     try {
         item._id = ObjectId(item._id)
         item.ownerId = ObjectId(item.ownerId)
+        const byUser = item.byUser;
         delete item.byUser;
         const updatedItem = await collection.replaceOne({'_id': item._id}, {$set: item})
+        updatedItem.byUser = byUser;
         return updatedItem;
     } catch (err) {
         console.log(`ERROR with trying to Update item ${item._id}`)
@@ -102,12 +97,14 @@ async function update(item) {
     }
 }
 
-async function add(item) {
+async function add(item) {    
     const collection = await dbService.getCollection('item')
     try {
+        item._id = ObjectId(item._id);
         item.ownerId = ObjectId(item.ownerId);
         await collection.insertOne(item);
-        return item;
+        const addedItem = await getById(item._id)
+        return addedItem;
     } catch (err) {
         console.log('ERROR with trying to Add item')
         throw err;
