@@ -20,18 +20,18 @@ async function login(email, password) {
     // If will be decided to work with bcrypt
     // const match = await bcrypt.compare(password, user.password)
     // if (!match) return Promise.reject('Invalid email or password')
-    console.log('auth service user:', user);    
+    // console.log('auth service user:', user);    
     delete user.password;
     return user;
 }
 
-async function signup(email, password, firstName, lastName) {
+async function signup(email, password, firstName, lastName, fullName) {
     logger.debug(`auth.service - signup with email: ${email}, fullname: ${firstName}`+`${lastName}`)
     if (!email || !password || !(firstName || lastName)) return Promise.reject('email, username and password are required!')
 
     // If will be decided to work with bcrypt
     // const hash = await bcrypt.hash(password, saltRounds)
     // return userService.add({ email, password: hash, username })
-    return userService.add({ email, password, firstName , lastName })
+    return userService.add({ email, password, firstName , lastName, fullName })
 }
 

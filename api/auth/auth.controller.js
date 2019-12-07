@@ -12,11 +12,10 @@ async function login(req, res) {
     const { email, password } = req.body.cred
     try {
         const user = await authService.login(email, password)
-        console.log('BE controller login user:', user);
         req.session.user = user;
         res.json(user)
     } catch (err) {
-        res.status(401).send({ error: err })
+        res.status(403).send({ error: err })
     }
 }
 

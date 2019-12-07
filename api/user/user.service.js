@@ -56,7 +56,7 @@ async function getById(userId) {
         user = user[0] 
         delete user.password
 
-        console.log('BE service user:*************************************** after aggregate:', user);
+        // console.log('BE service user:*************************************** after aggregate:', user);
                 
         // user.givenReviews = await reviewService.query({byUserId: ObjectId(user._id) })
         // user.givenReviews = user.givenReviews.map(review => {
@@ -73,10 +73,10 @@ async function getByEmail(email) {
     const collection = await dbService.getCollection('user')
     try {
         const user = await collection.findOne({email})
-        console.log('get by email user:', user);
-        return user
+        console.log('USER SERVICE, GETBYEMAIL: ********* USER IS:', user);
+        return user;
     } catch (err) {
-        console.log(`ERROR: while finding user ${email}`)
+        console.log(`ERROR: while finding user ********** ${email}`)
         throw err;
     }
 }

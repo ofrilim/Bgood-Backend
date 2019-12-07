@@ -17,7 +17,7 @@ async function query(filterBy = {}) {
     
     try {
         var items = await collection.find(criteria).toArray();
-        console.log('inside item service query, items:', items);
+        // console.log('inside item service query, items:', items);
 
         items = await collection.aggregate([
             {  
@@ -33,7 +33,7 @@ async function query(filterBy = {}) {
                 $unwind: '$byUser'
             },
         ]).toArray()
-        console.log('inside item service query, items:', items);
+        // console.log('inside item service query, items:', items);
 
         return items;
     }
@@ -66,7 +66,7 @@ async function getById(itemId) {
             },
         ]).toArray()
         item = item[0]
-        console.log('BE get by id item:', item);
+        // console.log('BE get by id item:', item);
         
         return item;
 
@@ -93,9 +93,8 @@ async function update(item) {
     try {
         item._id = ObjectId(item._id)
         item.ownerId = ObjectId(item.ownerId)
-        item.owner._id = ObjectId(item.owner._id)
-        item = await collection.update({"_id" : item._id}, {$unset:{byUser: ""}})
-        const updatedItem = await collection.replaceOne({"_id":item._id}, {$set: item})
+        delete item.byUser;
+        const updatedItem = await collection.replaceOne({'_id': item._id}, {$set: item})
         return updatedItem;
     } catch (err) {
         console.log(`ERROR with trying to Update item ${item._id}`)
@@ -106,6 +105,7 @@ async function update(item) {
 async function add(item) {
     const collection = await dbService.getCollection('item')
     try {
+        item.ownerId = ObjectId(item.ownerId);
         await collection.insertOne(item);
         return item;
     } catch (err) {
