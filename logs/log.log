@@ -1,0 +1,75 @@
+
+Sat, 07 Dec 2019 14:26:53 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 15:27:32 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 15:30:14 GMT - Debug - auth.service - login with email: LimorOfri@yahoo.com
+Sat, 07 Dec 2019 15:30:17 GMT - Debug - auth.service - login with email: LimorOfri@yahoo.com
+Sat, 07 Dec 2019 15:30:17 GMT - Debug - auth.service - login with email: LimorOfri@yahoo.com
+Sat, 07 Dec 2019 15:30:19 GMT - Debug - auth.service - login with email: LimorOfri@yahoo.com
+Sat, 07 Dec 2019 15:30:20 GMT - Debug - auth.service - login with email: LimorOfri@yahoo.com
+Sat, 07 Dec 2019 15:30:21 GMT - Debug - auth.service - login with email: LimorOfri@yahoo.com
+Sat, 07 Dec 2019 15:30:22 GMT - Debug - auth.service - login with email: LimorOfri@yahoo.com
+Sat, 07 Dec 2019 15:32:07 GMT - Debug - auth.service - login with email: kjjkf
+Sat, 07 Dec 2019 15:32:53 GMT - Debug - auth.service - login with email: LimorOfri@yahoo.com
+Sat, 07 Dec 2019 16:03:27 GMT - Debug - auth.service - login with email: LimorOfri@yahoo.com
+Sat, 07 Dec 2019 16:30:23 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 16:30:41 GMT - Info - Unauthorized User Tried to Login
+Sat, 07 Dec 2019 16:49:03 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 16:49:44 GMT - Info - Unauthorized User Tried to Login
+Sat, 07 Dec 2019 16:50:50 GMT - Debug - auth.service - login with email: axadd
+Sat, 07 Dec 2019 16:50:50 GMT - Debug - auth.service - login with email: axadd
+Sat, 07 Dec 2019 16:51:17 GMT - Debug - auth.service - login with email: LimorOfri@yahoo.com
+Sat, 07 Dec 2019 16:51:29 GMT - Debug - auth.service - login with email: LimorOfri@yahoo.com
+Sat, 07 Dec 2019 16:52:05 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 16:52:53 GMT - Debug - auth.service - login with email: LimorOfri@yahoo.com
+Sat, 07 Dec 2019 17:11:19 GMT - Debug - auth.service - login with email: LimorOfri@yahoo.com
+Sat, 07 Dec 2019 17:11:30 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Sat, 07 Dec 2019 17:19:58 GMT - Debug - auth.service - login with email: gal@gmail.com
+Sat, 07 Dec 2019 17:31:28 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Sat, 07 Dec 2019 20:19:15 GMT - Debug - limorofri@gmail.com, limor ofri, limor
+Sat, 07 Dec 2019 20:19:15 GMT - Debug - auth.service - signup with email: limorofri@gmail.com, fullname: limorofri
+Sat, 07 Dec 2019 20:19:15 GMT - Debug - auth.route - new account created: {"email":"limorofri@gmail.com","password":"limor","firstName":"limor","lastName":"ofri","fullName":"limor ofri","_id":"5dec0943a190b8593cd84931"}
+Sat, 07 Dec 2019 20:19:15 GMT - Debug - auth.service - login with email: limorofri@gmail.com
+Sat, 07 Dec 2019 20:21:17 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 20:21:43 GMT - Info - Unauthorized User Tried to Login
+Sat, 07 Dec 2019 20:23:22 GMT - Debug - limorofri@gmail.com, limor ofri, limor
+Sat, 07 Dec 2019 20:23:22 GMT - Debug - auth.service - signup with email: limorofri@gmail.com, fullname: limorofri
+Sat, 07 Dec 2019 20:23:23 GMT - Debug - auth.route - new account created: {"email":"limorofri@gmail.com","password":"limor","firstName":"limor","lastName":"ofri","fullName":"limor ofri","_id":"5dec0a3a822856a6e4c5c4e8"}
+Sat, 07 Dec 2019 20:23:23 GMT - Debug - auth.service - login with email: limorofri@gmail.com
+Sat, 07 Dec 2019 20:55:47 GMT - Debug - limorofri@gmail.com, limor ofri, limor
+Sat, 07 Dec 2019 20:55:47 GMT - Debug - auth.service - signup with email: limorofri@gmail.com, fullname: limorofri
+Sat, 07 Dec 2019 20:55:47 GMT - Debug - auth.route - new account created: {"email":"limorofri@gmail.com","password":"limor","firstName":"limor","lastName":"ofri","fullName":"limor ofri","_id":"5dec11d3822856a6e4c5c4eb"}
+Sat, 07 Dec 2019 20:55:47 GMT - Debug - auth.service - login with email: limorofri@gmail.com
+Sat, 07 Dec 2019 21:01:19 GMT - Debug - limon@limon.limon, limon limon, limon
+Sat, 07 Dec 2019 21:01:19 GMT - Debug - auth.service - signup with email: limon@limon.limon, fullname: limonlimon
+Sat, 07 Dec 2019 21:01:19 GMT - Debug - auth.route - new account created: {"email":"limon@limon.limon","password":"limon","firstName":"limon","lastName":"limon","fullName":"limon limon","_id":"5dec131f822856a6e4c5c4ec"}
+Sat, 07 Dec 2019 21:01:19 GMT - Debug - auth.service - login with email: limon@limon.limon
+Sat, 07 Dec 2019 21:04:16 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 21:04:18 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 21:04:58 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 21:04:59 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 21:06:37 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 21:06:39 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 21:07:35 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 21:07:37 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 21:09:12 GMT - Info - Unauthorized User Tried to Login
+Sat, 07 Dec 2019 21:09:39 GMT - Debug - limorofri@gmail.com, limor ofri, limor
+Sat, 07 Dec 2019 21:09:39 GMT - Debug - auth.service - signup with email: limorofri@gmail.com, fullname: limorofri
+Sat, 07 Dec 2019 21:09:39 GMT - Debug - auth.route - new account created: {"email":"limorofri@gmail.com","password":"limor","firstName":"limor","lastName":"ofri","fullName":"limor ofri","imgUrl":"../assets/imgs/image-default.png","location":{"adress":"","lat":0,"lng":0},"wishList":[],"_id":"5dec15138ee0a1bfac430819"}
+Sat, 07 Dec 2019 21:09:39 GMT - Debug - auth.service - login with email: limorofri@gmail.com
+Sat, 07 Dec 2019 21:22:45 GMT - Debug - jessy@gmail.com, jessy jessy, jessy
+Sat, 07 Dec 2019 21:22:46 GMT - Debug - auth.service - signup with email: jessy@gmail.com, fullname: jessyjessy
+Sat, 07 Dec 2019 21:22:46 GMT - Debug - auth.route - new account created: {"email":"jessy@gmail.com","password":"jessy","firstName":"jessy","lastName":"jessy","fullName":"jessy jessy","imgUrl":"https://thumbs.dreamstime.com/z/add-profile-vector-icon-elements-mobile-concept-web-apps-thin-line-icons-website-design-development-app-premium-pack-color-145781229.jpg","location":{"adress":"","lat":0,"lng":0},"wishList":[],"_id":"5dec18268ee0a1bfac43081d"}
+Sat, 07 Dec 2019 21:22:46 GMT - Debug - auth.service - login with email: jessy@gmail.com
+Sat, 07 Dec 2019 21:26:12 GMT - Debug - or@or.or, or or, or
+Sat, 07 Dec 2019 21:26:12 GMT - Debug - auth.service - signup with email: or@or.or, fullname: oror
+Sat, 07 Dec 2019 21:26:12 GMT - Debug - auth.route - new account created: {"email":"or@or.or","password":"or","firstName":"or","lastName":"or","fullName":"or or","imgUrl":"https://hani.vn/wp-content/uploads/2018/02/ladavatar.jpg","location":{"adress":"","lat":0,"lng":0},"wishList":[],"_id":"5dec18f48ee0a1bfac43081e"}
+Sat, 07 Dec 2019 21:26:12 GMT - Debug - auth.service - login with email: or@or.or
+Sat, 07 Dec 2019 21:28:05 GMT - Debug - orit@or.com, orit orit, orit
+Sat, 07 Dec 2019 21:28:05 GMT - Debug - auth.service - signup with email: orit@or.com, fullname: oritorit
+Sat, 07 Dec 2019 21:28:05 GMT - Debug - auth.route - new account created: {"email":"orit@or.com","password":"orit","firstName":"orit","lastName":"orit","fullName":"orit orit","imgUrl":"https://cdn2.vectorstock.com/i/1000x1000/59/01/casual-young-woman-isolated-icon-design-vector-9655901.jpg","location":{"adress":"","lat":0,"lng":0},"wishList":[],"_id":"5dec19658ee0a1bfac43081f"}
+Sat, 07 Dec 2019 21:28:05 GMT - Debug - auth.service - login with email: orit@or.com
+Sat, 07 Dec 2019 21:29:56 GMT - Debug - auth.service - login with email: orit@or.com
+Sat, 07 Dec 2019 21:33:04 GMT - Debug - dani@dani.com, dani dani, dani
+Sat, 07 Dec 2019 21:33:04 GMT - Debug - auth.service - signup with email: dani@dani.com, fullname: danidani
+Sat, 07 Dec 2019 21:33:04 GMT - Debug - auth.route - new account created: {"email":"dani@dani.com","password":"dani","firstName":"dani","lastName":"dani","fullName":"dani dani","imgUrl":"https://qph.fs.quoracdn.net/main-raw-359505805-hmqrogfhzagrxzngqieqxccqxpqxltrr.jpeg","location":{"adress":"","lat":0,"lng":0},"wishList":[],"_id":"5dec1a908ee0a1bfac430820"}
+Sat, 07 Dec 2019 21:33:04 GMT - Debug - auth.service - login with email: dani@dani.com
