@@ -33,7 +33,7 @@ async function query(filterBy = {}) {
         return items;
     }
     catch (err) {
-        console.log('ERROR AGGREGATE: cannot find items')
+        console.error('ERROR AGGREGATE: cannot find items')
         throw err;
     }
 }
