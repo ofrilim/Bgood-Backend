@@ -150,3 +150,11 @@ Sun, 08 Dec 2019 12:28:28 GMT - Info - Server is running on port: 3000
 Sun, 08 Dec 2019 12:30:35 GMT - Info - Server is running on port: 3000
 Sun, 08 Dec 2019 12:31:09 GMT - Info - Server is running on port: 3000
 Sun, 08 Dec 2019 12:32:50 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 12:34:42 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 12:34:43 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 13:27:58 GMT - Info - Unauthorized User Tried to Login
+Sun, 08 Dec 2019 13:28:13 GMT - Debug - auth.service - login with email: gal@gmail.com
+Sun, 08 Dec 2019 13:28:15 GMT - Debug - auth.service - login with email: gal@gmail.com
+Sun, 08 Dec 2019 13:34:38 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 13:45:46 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Sun, 08 Dec 2019 13:46:02 GMT - Debug - auth.service - login with email: limorofri@gmail.com
