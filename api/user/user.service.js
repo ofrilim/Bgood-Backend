@@ -94,8 +94,6 @@ async function getByEmail(email) {
             },
         ]).toArray()
         user = user[0] 
-        console.log('BE user servie user:', user);
-        
         return user
     } catch (err) {
         console.log(`ERROR: while finding user ${email}`)
@@ -122,20 +120,16 @@ async function update(user) {
     if (user.wishList){
         user.wishList.map(itemId => {
             itemId = ObjectId(itemId)
-            console.log('itemId map:', itemId);
-            console.log('type of item id:', typeof(itemId));
             return itemId            
         })
     }
     try {
-        // const {itemsOnWishList, ownItems} = user
-        // console.log('itemsOnWishList:', itemsOnWishList);
-        // console.log('ownItems:', ownItems);
-        // console.log(user.wishList);
+        delete user.itemsOnWishList
+        delete user.ownItems
+        // if (user.wishList.length){
+        //     user.wishList.map(itemId => itemId = ObjectId(itemId))
+        // }
         await collection.replaceOne({"_id":user._id}, {$set : user})
-
-        // user.itemsOnWishList = itemsOnWishList
-        // user.ownItems = ownItems
         user = await collection.aggregate([
             {   
                 $match: user   
@@ -161,8 +155,6 @@ async function update(user) {
         ]).toArray()
         user = user[0] 
         delete user.password
-        console.log('user updated:', user);
-        
         return user
     } catch (err) {
         console.log(`ERROR: cannot update user ${user._id}`)

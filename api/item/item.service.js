@@ -62,9 +62,9 @@ async function getById(itemId) {
         ]).toArray()
         item = item[0]        
         return item;
-    } catch (err) {
-        console.log(`ERROR while trying to Find item: ${itemId}`)
-        throw err;
+    } catch (error) {
+        console.error(`ERROR while trying to Find item: ${itemId}`)
+        throw error;
     }
 }
 
@@ -73,9 +73,9 @@ async function remove(itemId) {
     try {
         itemId = ObjectId(itemId)
         await collection.deleteOne({"_id":itemId})
-    } catch (err) {
-        console.log(`ERROR with trying to Remove item ${itemId}`)
-        throw err;
+    } catch (error) {
+        console.error(`ERROR with trying to Remove item ${itemId}`)
+        throw error;
     }
 }
 
@@ -89,9 +89,9 @@ async function update(item) {
         const updatedItem = await collection.replaceOne({'_id': item._id}, {$set: item})
         updatedItem.byUser = byUser;
         return updatedItem;
-    } catch (err) {
-        console.log(`ERROR with trying to Update item ${item._id}`)
-        throw err;
+    } catch (error) {
+        console.error(`ERROR with trying to Update item ${item._id}`)
+        throw error;
     }
 }
 
@@ -103,9 +103,9 @@ async function add(item) {
         await collection.insertOne(item);
         const addedItem = await getById(item._id)
         return addedItem;
-    } catch (err) {
-        console.log('ERROR with trying to Add item')
-        throw err;
+    } catch (error) {
+        console.error('ERROR with trying to Add item')
+        throw error;
     }
 }
 
