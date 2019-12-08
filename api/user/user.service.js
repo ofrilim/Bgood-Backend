@@ -63,9 +63,6 @@ async function getById(userId) {
 async function getByEmail(email) {
     const collection = await dbService.getCollection('user')
     try {
-        // const user = await collection.findOne({email})       // VERSION BEFORE AGGREGATION
-        // console.log('USER SERVICE, GETBYEMAIL: ********* USER IS:', user);
-        // return user;
         var user = await collection.findOne({email})
         user = await collection.aggregate([
             {   
@@ -91,7 +88,6 @@ async function getByEmail(email) {
             },
         ]).toArray()
         user = user[0] 
-        console.log('BE user servie user:', user);
         return user
     } catch (err) {
         console.log(`ERROR: while finding user ********** ${email}`)
@@ -114,15 +110,15 @@ async function update(user) {
     user._id = ObjectId(user._id);
 
     try {
-        const {itemsOnWishList, ownItems} = user
-        console.log('itemsOnWishList:', itemsOnWishList);
-        console.log('ownItems:', ownItems);
+        const {itemsOnWishList, ownItems} = user;
+        // console.log('itemsOnWishList:', itemsOnWishList);
+        // console.log('ownItems:', ownItems);
         delete user.itemsOnWishList
         delete user.ownItems
         if (user.wishList.length){
             user.wishList.map(itemId => itemId = ObjectId(itemId))
         }
-        console.log(user.wishList);
+        // console.log(user.wishList);
         await collection.replaceOne({"_id":user._id}, {$set : user})
 
         // user.itemsOnWishList = itemsOnWishList
@@ -150,9 +146,7 @@ async function update(user) {
                 }
             },
         ]).toArray()
-        user = user[0] 
-        console.log('user updated:', user);
-        
+        user = user[0]         
         return user
     } catch (err) {
         console.log(`ERROR: cannot update user ${user._id}`)
