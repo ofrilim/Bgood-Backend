@@ -11,11 +11,13 @@ module.exports = {
 
 async function getItems(req, res) {
     try {
-        const items = await itemService.query(req.query)   // req.query ?  for filterBy
+        const items = await itemService.query(req.query)
+        console.log('controller req query:', req.query);
+        
         res.send(items) 
     } catch(error){
-        res.status(500).send({ error: err })
-        logger.log(error)
+        res.status(500).send({ error })
+        console.log(error)
     }
 }
 
@@ -25,7 +27,7 @@ async function getItem(req, res) {
         res.send(item)
     } catch(error){
         res.status(500).send({ error: err })
-        logger.log(error)
+        console.log(error)
     }
 }
 
@@ -35,7 +37,7 @@ async function removeItem(req, res) {
         res.send()
     } catch(error) {
         res.status(500).send({ error: err })
-        logger.log(error)
+        console.log(error)
     }
 }
 
@@ -45,7 +47,7 @@ async function updateItem(req, res) {
         res.send(item)
     } catch(error) {
         res.status(500).send({ error })
-        logger.log(error)
+        console.log(error)
     }
 }
 
@@ -58,7 +60,7 @@ async function addItem(req, res) {
         res.send(updatedItem)
     } catch(error) {
         res.status(500).send({error})
-        logger.log(error)
+        console.log(error)
     }
 }
 

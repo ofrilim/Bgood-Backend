@@ -14,9 +14,14 @@ async function query(filterBy = {}) {
     
     const collection = await dbService.getCollection('item')
     const criteria = _buildCriteria(filterBy)
+    
     try {
-        var items = await collection.find(criteria).toArray();
-        items = await collection.aggregate([
+        console.log('query criteria:', criteria);
+        // var items = await collection.find(criteria).toArray()
+        var items = await collection.aggregate([
+            {
+                $match: criteria
+            },
             {  
                 $lookup: 
                 {
@@ -27,11 +32,14 @@ async function query(filterBy = {}) {
                 }
             },
             {
-                $unwind: '$byUser'
+                $unwind: '$byUser' 
             },
-        ]).toArray()
-        return items;
-    }
+            ]).toArray();
+        
+            console.log('item service query items number:', items.length);
+            return items;
+            
+        }
     catch (err) {
         console.error('ERROR AGGREGATE: cannot find items')
         throw err;
@@ -111,11 +119,13 @@ async function add(item) {
 
 function _buildCriteria(filterBy) {
     const criteria = {};
-    if (filterBy.txt) {
-        criteria.name = filterBy.txt
+    console.log('build criteria filter by:', filterBy);
+    if (filterBy.category) {
+        criteria.category = filterBy.category
     }
-    if (filterBy.minPrice) {
-        criteria.price = {$gte : +filterBy.minPrice}
-    }
+    console.log('build criteria by:', criteria);
+    // if (filterBy.minPrice) {
+    //     criteria.price = {$gte : +filterBy.minPrice}
+    // }
     return criteria;
 }

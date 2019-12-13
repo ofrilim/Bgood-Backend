@@ -13,7 +13,10 @@ module.exports = {
 }
 
 async function query(filterBy = {}) {
+    console.log('filterBy:', filterBy);
+    
     const criteria = _buildCriteria(filterBy)
+    console.log('criteria:', criteria);
     const collection = await dbService.getCollection('user')
     try {
         const users = await collection.find(criteria).toArray();
@@ -54,11 +57,6 @@ async function getById(userId) {
         ]).toArray()
         user = user[0] 
         delete user.password
-        // user.givenReviews = await reviewService.query({byUserId: ObjectId(user._id) })
-        // user.givenReviews = user.givenReviews.map(review => {
-        //     delete review.byUser
-        //     return review
-        // })
         return user
     } catch (err) {
         console.log(`ERROR: while finding user ${userId}`)
