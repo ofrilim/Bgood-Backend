@@ -1,4 +1,29 @@
 
+<<<<<<< HEAD
+Sat, 07 Dec 2019 18:41:39 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 18:42:28 GMT - Info - Unauthorized User Tried to Login
+Sat, 07 Dec 2019 18:42:38 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Sat, 07 Dec 2019 21:01:16 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 21:02:30 GMT - Info - Unauthorized User Tried to Login
+Sat, 07 Dec 2019 21:02:37 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Sat, 07 Dec 2019 21:04:00 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 21:04:06 GMT - Info - Unauthorized User Tried to Login
+Sat, 07 Dec 2019 21:04:11 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Sun, 08 Dec 2019 07:19:35 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 07:53:45 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Sun, 08 Dec 2019 08:02:16 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 08:19:25 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 08:19:35 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 08:19:58 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 08:20:50 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 08:22:55 GMT - Info - Unauthorized User Tried to Login
+Sun, 08 Dec 2019 08:22:58 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Sun, 08 Dec 2019 08:23:32 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 08:24:33 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 08:24:36 GMT - Info - Unauthorized User Tried to Login
+Sun, 08 Dec 2019 08:24:49 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Sun, 08 Dec 2019 08:25:23 GMT - Info - Server is running on port: 3000
+=======
 Sat, 07 Dec 2019 14:26:53 GMT - Info - Server is running on port: 3000
 Sat, 07 Dec 2019 15:27:32 GMT - Info - Server is running on port: 3000
 Sat, 07 Dec 2019 15:30:14 GMT - Debug - auth.service - login with email: LimorOfri@yahoo.com
@@ -103,6 +128,7 @@ Sun, 08 Dec 2019 08:20:07 GMT - Info - Server is running on port: 3000
 Sun, 08 Dec 2019 08:20:08 GMT - Info - Server is running on port: 3000
 Sun, 08 Dec 2019 08:20:18 GMT - Info - Server is running on port: 3000
 Sun, 08 Dec 2019 08:20:20 GMT - Info - Server is running on port: 3000
+<<<<<<< HEAD
 Sun, 08 Dec 2019 08:29:43 GMT - Info - Server is running on port: 3000
 Sun, 08 Dec 2019 08:30:30 GMT - Info - Unauthorized User Tried to Login
 Sun, 08 Dec 2019 08:30:49 GMT - Debug - auth.service - login with email: limorofri@gmail.com
@@ -230,3 +256,126 @@ Thu, 12 Dec 2019 16:57:43 GMT - Info - Server is running on port: 3000
 Thu, 12 Dec 2019 16:59:13 GMT - Info - Unauthorized User Tried to Login
 Thu, 12 Dec 2019 16:59:33 GMT - Debug - auth.service - login with email: LironSA@walla.co.il
 Sat, 14 Dec 2019 08:55:02 GMT - Info - Server is running on port: 3000
+=======
+>>>>>>> fbd59001d03b02bd7cff6cee04b2015135550994
+
+Sun, 08 Dec 2019 08:30:43 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 08:30:55 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 08:30:59 GMT - Info - Unauthorized User Tried to Login
+Sun, 08 Dec 2019 08:31:01 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Sun, 08 Dec 2019 08:32:10 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Sun, 08 Dec 2019 08:34:47 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 08:34:54 GMT - Info - Unauthorized User Tried to Login
+Sun, 08 Dec 2019 08:34:58 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Sun, 08 Dec 2019 08:42:41 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Sun, 08 Dec 2019 08:44:11 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 08:45:50 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Sun, 08 Dec 2019 11:20:46 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 11:21:24 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 11:21:40 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 11:25:29 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 12:27:54 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 12:28:28 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 12:30:35 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 12:31:09 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 12:32:50 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 12:34:42 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 12:34:43 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 13:27:58 GMT - Info - Unauthorized User Tried to Login
+Sun, 08 Dec 2019 13:28:13 GMT - Debug - auth.service - login with email: gal@gmail.com
+Sun, 08 Dec 2019 13:28:15 GMT - Debug - auth.service - login with email: gal@gmail.com
+Sun, 08 Dec 2019 13:34:38 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 13:45:46 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Sun, 08 Dec 2019 13:46:02 GMT - Debug - auth.service - login with email: limorofri@gmail.com
+Sun, 08 Dec 2019 14:06:33 GMT - Debug - auth.service - login with email: LironSA@walla.co.il
+Sun, 08 Dec 2019 14:07:34 GMT - Debug - auth.service - login with email: LironSA@walla.co.il
+Sun, 08 Dec 2019 14:38:17 GMT - Debug - auth.service - login with email: limorofri@gmail.com
+Sun, 08 Dec 2019 14:48:00 GMT - Debug - auth.service - login with email: LironSA@walla.co.il
+Sun, 08 Dec 2019 14:50:19 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 14:50:30 GMT - Info - Unauthorized User Tried to Login
+Sun, 08 Dec 2019 14:50:32 GMT - Debug - auth.service - login with email: LironSA@walla.co.il
+Sun, 08 Dec 2019 14:56:53 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 14:57:01 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 15:01:55 GMT - Debug - auth.service - login with email: limorofri@gmail.com
+Sun, 08 Dec 2019 16:00:24 GMT - Debug - auth.service - login with email: LironSA@walla.co.il
+Sun, 08 Dec 2019 16:00:36 GMT - Debug - auth.service - login with email: limorofri@gmail.com
+Sun, 08 Dec 2019 16:04:21 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 16:04:24 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 16:05:16 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 16:13:03 GMT - Info - Unauthorized User Tried to Login
+Sun, 08 Dec 2019 16:14:15 GMT - Debug - auth.service - login with email: limorofri@gmail.com
+Sun, 08 Dec 2019 16:14:38 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Mon, 09 Dec 2019 09:50:58 GMT - Info - Server is running on port: 3000
+Mon, 09 Dec 2019 11:11:06 GMT - Info - Server is running on port: 3000
+Mon, 09 Dec 2019 11:12:01 GMT - Info - Server is running on port: 3000
+Mon, 09 Dec 2019 11:12:24 GMT - Info - Server is running on port: 3000
+Mon, 09 Dec 2019 11:25:59 GMT - Info - Server is running on port: 3000
+Mon, 09 Dec 2019 11:32:23 GMT - Info - Server is running on port: 3000
+Mon, 09 Dec 2019 11:39:55 GMT - Info - Server is running on port: 3000
+Mon, 09 Dec 2019 11:43:12 GMT - Info - Server is running on port: 3000
+Mon, 09 Dec 2019 11:43:43 GMT - Info - Server is running on port: 3000
+Mon, 09 Dec 2019 11:57:37 GMT - Info - Server is running on port: 3000
+Mon, 09 Dec 2019 11:58:45 GMT - Info - Unauthorized User Tried to Login
+Mon, 09 Dec 2019 11:58:48 GMT - Debug - auth.service - login with email: LironSA@walla.co.il
+Mon, 09 Dec 2019 11:58:59 GMT - Debug - auth.service - login with email: limorofri@gmail.com
+Mon, 09 Dec 2019 11:59:06 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Mon, 09 Dec 2019 11:59:15 GMT - Debug - auth.service - login with email: limorofri@gmail.com
+Mon, 09 Dec 2019 12:33:49 GMT - Info - Server is running on port: 3000
+Mon, 09 Dec 2019 12:33:55 GMT - Info - Unauthorized User Tried to Login
+Mon, 09 Dec 2019 12:34:13 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Mon, 09 Dec 2019 12:34:15 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Mon, 09 Dec 2019 12:34:21 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Mon, 09 Dec 2019 12:34:22 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Mon, 09 Dec 2019 12:34:25 GMT - Debug - auth.service - login with email: limorofri@gmail.com
+Mon, 09 Dec 2019 12:34:26 GMT - Debug - auth.service - login with email: limorofri@gmail.com
+Mon, 09 Dec 2019 12:35:09 GMT - Info - Server is running on port: 3000
+Mon, 09 Dec 2019 12:35:11 GMT - Info - Server is running on port: 3000
+Mon, 09 Dec 2019 12:35:20 GMT - Info - Unauthorized User Tried to Login
+Mon, 09 Dec 2019 12:35:26 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Mon, 09 Dec 2019 12:36:31 GMT - Debug - auth.service - login with email: limorofri@gmail.com
+Mon, 09 Dec 2019 20:03:58 GMT - Debug - auth.service - login with email: limorofri@gmail.com
+Mon, 09 Dec 2019 20:09:09 GMT - Debug - auth.service - login with email: LironSA@walla.co.il
+Mon, 09 Dec 2019 20:09:22 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Tue, 10 Dec 2019 12:10:53 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Wed, 11 Dec 2019 13:25:19 GMT - Info - Server is running on port: 3000
+Wed, 11 Dec 2019 14:42:16 GMT - Info - Unauthorized User Tried to Login
+Wed, 11 Dec 2019 14:42:26 GMT - Debug - auth.service - login with email: HilaS@ggmail.com
+Wed, 11 Dec 2019 15:59:33 GMT - Info - Server is running on port: 3000
+Wed, 11 Dec 2019 16:00:03 GMT - Info - Server is running on port: 3000
+Wed, 11 Dec 2019 19:52:17 GMT - Info - Server is running on port: 3000
+Wed, 11 Dec 2019 19:52:20 GMT - Info - Server is running on port: 3000
+Wed, 11 Dec 2019 19:56:30 GMT - Info - Server is running on port: 3000
+Wed, 11 Dec 2019 19:56:46 GMT - Info - Server is running on port: 3000
+Wed, 11 Dec 2019 19:58:01 GMT - Info - Server is running on port: 3000
+Wed, 11 Dec 2019 20:18:46 GMT - Info - Server is running on port: 3000
+Wed, 11 Dec 2019 20:22:58 GMT - Info - Server is running on port: 3000
+Wed, 11 Dec 2019 20:24:47 GMT - Info - Server is running on port: 3000
+Wed, 11 Dec 2019 20:40:27 GMT - Info - Server is running on port: 3000
+Wed, 11 Dec 2019 20:40:52 GMT - Info - Server is running on port: 3000
+Wed, 11 Dec 2019 20:43:14 GMT - Info - Server is running on port: 3000
+Wed, 11 Dec 2019 20:43:52 GMT - Info - Server is running on port: 3000
+Wed, 11 Dec 2019 20:44:38 GMT - Info - Server is running on port: 3000
+Wed, 11 Dec 2019 20:44:51 GMT - Info - Server is running on port: 3000
+Wed, 11 Dec 2019 20:45:03 GMT - Info - Server is running on port: 3000
+Wed, 11 Dec 2019 20:47:09 GMT - Info - Server is running on port: 3000
+Wed, 11 Dec 2019 20:48:18 GMT - Info - Server is running on port: 3000
+Wed, 11 Dec 2019 20:49:16 GMT - Info - Server is running on port: 3000
+Wed, 11 Dec 2019 20:49:31 GMT - Info - Server is running on port: 3000
+Wed, 11 Dec 2019 20:51:13 GMT - Info - Server is running on port: 3000
+Wed, 11 Dec 2019 20:51:30 GMT - Info - Server is running on port: 3000
+Wed, 11 Dec 2019 20:51:40 GMT - Info - Server is running on port: 3000
+Wed, 11 Dec 2019 20:51:50 GMT - Info - Server is running on port: 3000
+Wed, 11 Dec 2019 20:52:07 GMT - Info - Server is running on port: 3000
+Wed, 11 Dec 2019 20:52:34 GMT - Info - Server is running on port: 3000
+Wed, 11 Dec 2019 20:53:05 GMT - Info - Server is running on port: 3000
+Thu, 12 Dec 2019 07:11:21 GMT - Info - Server is running on port: 3000
+Thu, 12 Dec 2019 07:16:23 GMT - Info - Server is running on port: 3000
+Thu, 12 Dec 2019 07:23:47 GMT - Info - Server is running on port: 3000
+Thu, 12 Dec 2019 07:54:36 GMT - Info - Server is running on port: 3000
+Thu, 12 Dec 2019 13:33:16 GMT - Info - Server is running on port: 3000
+Thu, 12 Dec 2019 13:38:29 GMT - Info - Server is running on port: 3000
+Thu, 12 Dec 2019 19:14:12 GMT - Info - Server is running on port: 3000
+Thu, 12 Dec 2019 19:14:23 GMT - Info - Unauthorized User Tried to Login
+Thu, 12 Dec 2019 20:03:54 GMT - Info - Server is running on port: 3000
+Fri, 13 Dec 2019 12:08:56 GMT - Info - Server is running on port: 3000
+>>>>>>> 595ff708963a67f2aee6bf3654da4e1e24f4b783

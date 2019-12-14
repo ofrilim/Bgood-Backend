@@ -16,8 +16,12 @@ async function query(filterBy = {}) {
     const criteria = _buildCriteria(filterBy)
     
     try {
-        var items = await collection.find(criteria).toArray();
-        items = await collection.aggregate([
+        console.log('query criteria:', criteria);
+        // var items = await collection.find(criteria).toArray()
+        var items = await collection.aggregate([
+            {
+                $match: criteria
+            },
             {  
                 $lookup: 
                 {
@@ -28,13 +32,16 @@ async function query(filterBy = {}) {
                 }
             },
             {
-                $unwind: '$byUser'
+                $unwind: '$byUser' 
             },
-        ]).toArray()
-        return items;
-    }
+            ]).toArray();
+        
+            console.log('item service query items number:', items.length);
+            return items;
+            
+        }
     catch (err) {
-        console.log('ERROR AGGREGATE: cannot find items')
+        console.error('ERROR AGGREGATE: cannot find items')
         throw err;
     }
 }
@@ -63,10 +70,9 @@ async function getById(itemId) {
         ]).toArray()
         item = item[0]        
         return item;
-
-    } catch (err) {
-        console.log(`ERROR while trying to Find item: ${itemId}`)
-        throw err;
+    } catch (error) {
+        console.error(`ERROR while trying to Find item: ${itemId}`)
+        throw error;
     }
 }
 
@@ -75,9 +81,9 @@ async function remove(itemId) {
     try {
         itemId = ObjectId(itemId)
         await collection.deleteOne({"_id":itemId})
-    } catch (err) {
-        console.log(`ERROR with trying to Remove item ${itemId}`)
-        throw err;
+    } catch (error) {
+        console.error(`ERROR with trying to Remove item ${itemId}`)
+        throw error;
     }
 }
 
@@ -91,9 +97,9 @@ async function update(item) {
         const updatedItem = await collection.replaceOne({'_id': item._id}, {$set: item})
         updatedItem.byUser = byUser;
         return updatedItem;
-    } catch (err) {
-        console.log(`ERROR with trying to Update item ${item._id}`)
-        throw err;
+    } catch (error) {
+        console.error(`ERROR with trying to Update item ${item._id}`)
+        throw error;
     }
 }
 
@@ -105,19 +111,21 @@ async function add(item) {
         await collection.insertOne(item);
         const addedItem = await getById(item._id)
         return addedItem;
-    } catch (err) {
-        console.log('ERROR with trying to Add item')
-        throw err;
+    } catch (error) {
+        console.error('ERROR with trying to Add item')
+        throw error;
     }
 }
 
 function _buildCriteria(filterBy) {
     const criteria = {};
-    if (filterBy.txt) {
-        criteria.name = filterBy.txt
+    console.log('build criteria filter by:', filterBy);
+    if (filterBy.category) {
+        criteria.category = filterBy.category
     }
-    if (filterBy.minPrice) {
-        criteria.price = {$gte : +filterBy.minPrice}
-    }
+    console.log('build criteria by:', criteria);
+    // if (filterBy.minPrice) {
+    //     criteria.price = {$gte : +filterBy.minPrice}
+    // }
     return criteria;
 }

@@ -1,5 +1,6 @@
 
 const dbService = require('../../services/db.service')
+// const reviewService = require('../review/review.service')
 const ObjectId = require('mongodb').ObjectId
 
 module.exports = {
@@ -12,7 +13,10 @@ module.exports = {
 }
 
 async function query(filterBy = {}) {
+    console.log('filterBy:', filterBy);
+    
     const criteria = _buildCriteria(filterBy)
+    console.log('criteria:', criteria);
     const collection = await dbService.getCollection('user')
     try {
         const users = await collection.find(criteria).toArray();
@@ -90,7 +94,7 @@ async function getByEmail(email) {
         user = user[0] 
         return user
     } catch (err) {
-        console.log(`ERROR: while finding user ********** ${email}`)
+        console.log(`ERROR: while finding user ${email}`)
         throw err;
     }
 }
@@ -107,34 +111,26 @@ async function remove(userId) {
 
 async function update(user) {
     const collection = await dbService.getCollection('user')
+    // var userToUpdate = user
     user._id = ObjectId(user._id);
-
+    delete user.itemsOnWishList
+    delete user.ownItems
+    if (user.wishList){
+        user.wishList.map(itemId => {
+            itemId = ObjectId(itemId)
+            return itemId            
+        })
+    }
     try {
-        const {itemsOnWishList, ownItems} = user;
-        // console.log('itemsOnWishList:', itemsOnWishList);
-        // console.log('ownItems:', ownItems);
         delete user.itemsOnWishList
         delete user.ownItems
-        if (user.wishList.length){
-            user.wishList.map(itemId => itemId = ObjectId(itemId))
-        }
-        // console.log(user.wishList);
+        // if (user.wishList.length){
+        //     user.wishList.map(itemId => itemId = ObjectId(itemId))
+        // }
         await collection.replaceOne({"_id":user._id}, {$set : user})
-
-        // user.itemsOnWishList = itemsOnWishList
-        // user.ownItems = ownItems
         user = await collection.aggregate([
             {   
                 $match: user   
-            },
-            {  
-                $lookup: 
-                {
-                    from: 'item',
-                    localField: 'wishList',
-                    foreignField: '_id',
-                    as: 'itemsOnWishList'
-                }
             },
             {
                 $lookup:
@@ -145,8 +141,18 @@ async function update(user) {
                     as: 'ownItems'
                 }
             },
+            {  
+                $lookup: 
+                {
+                    from: 'item',
+                    localField: 'wishList',
+                    foreignField: '_id',
+                    as: 'itemsOnWishList'
+                }
+            },
         ]).toArray()
-        user = user[0]         
+        user = user[0] 
+        delete user.password
         return user
     } catch (err) {
         console.log(`ERROR: cannot update user ${user._id}`)
