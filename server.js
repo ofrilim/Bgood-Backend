@@ -17,6 +17,7 @@ const port = process.env.PORT || 3000;
 const authRoutes = require('./api/auth/auth.routes')
 const itemRoutes = require('./api/item/item.routes')
 const userRoutes = require('./api/user/user.routes')
+const connectSockets = require('./api/socket/socket.routes')
 
 app.use(cookieParser())
 app.use(bodyParser.json())
@@ -40,7 +41,7 @@ if (process.env.NODE_ENV !== 'production') {
 app.use('/auth', authRoutes)
 app.use('/item', itemRoutes)
 app.use('/user', userRoutes)
-// connectSockets(io)
+connectSockets(io)
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.resolve(__dirname, 'public')))

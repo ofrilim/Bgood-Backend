@@ -13,7 +13,7 @@ async function login(req, res) {
     try {
         const user = await authService.login(email, password)
         req.session.user = user;
-        console.log('BE controller login user:', req.session);
+        // console.log('BE controller login user:', req.session);
         res.json(user)
     } catch (err) {
         res.status(403).send({ error: err })
